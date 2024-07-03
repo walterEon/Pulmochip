@@ -1,0 +1,11 @@
+
+.layout {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 200px; /* Ancho de la barra de navegación */
+    padding: 20px;
+    width: 100%;
+  }
+  

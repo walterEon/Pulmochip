@@ -1,0 +1,31 @@
+/* src/components/Navbar.css */
+.navbar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar li {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .navbar li a:hover {
+    background-color: #575757;
+  }
+  
