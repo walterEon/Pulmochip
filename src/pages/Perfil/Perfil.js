@@ -3,9 +3,12 @@ import React, { useState } from "react";
 function Perfil() {
 
   return (
-    <h2>
+    <div className="perfil">
+      <h2>
         Perfil de usuario
-    </h2>
+      </h2>
+    </div>
+    
   );
 }
 

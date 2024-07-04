@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as MdIcons from 'react-icons/md';
 import { Sidebar } from "../Sidebar/Sidebar.js";
 import './Navbar.css';
+import { IconContext } from "react-icons";
+import logo from './drager.png';
+
+
 function Navbar(){
 
     const [sidebar, setSidebar] = useState(false);
@@ -12,15 +17,25 @@ function Navbar(){
 
     return(
         <>
+        <IconContext.Provider value={{color: '#fff'}}>
             <div className="navbar">
                 <Link to='#' className="menu-bars">
                     <FaIcons.FaBars onClick={showSidebar} />
                 </Link>
+                <div className="navbar-center">
+                    <img src={logo} alt="Logo" className="navbar-logo" />
+                </div>
+                <div className="navbar-right">
+                    <MdIcons.MdPersonOff className="iconoclose"/>
+                    <Link to='/' className="logout-link">
+                        Cerrar Sesión
+                    </Link>
+                </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items" onClick={showSidebar}>
                     <li className="navbar-toggle">
-                        <Link to='#' className="menu-bars">
+                        <Link to='#' className="menu-bars-close">
                             <AiIcons.AiOutlineClose />
                         </Link>
                     </li>
@@ -36,6 +51,7 @@ function Navbar(){
                     })}
                 </ul>
             </nav>
+            </IconContext.Provider>
         </>
     )
 }
