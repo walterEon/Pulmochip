@@ -1,0 +1,18 @@
+.perfil-page {
+    padding: 20px;
+    margin-left: 280px;
+    margin-top: 20px;
+    margin-right: 30px;
+    background-color: white;
+  }
+  
+  .perfil-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la pantalla */
+    gap: 10px; /* Espacio entre los elementos */
+  }
+  
+  .perfil-section h3 {
+    width: 100%; /* Hace que el título ocupe todo el ancho */
+    margin-bottom: 10px;
+  }

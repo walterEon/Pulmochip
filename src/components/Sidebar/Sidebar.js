@@ -10,37 +10,37 @@ export const Sidebar = [
     {
         title: 'Perfil de usuario',
         path: '/perfil',
-        icon: <FaIcons.FaUser/>,
+        icon: <FaIcons.FaUser color="black" />,
         cName: 'nav-text'
     },
     {
         title: 'Lista de empresas',
         path: '/lista-empresas',
-        icon: <CgIcons.CgOrganisation/>,
+        icon: <CgIcons.CgOrganisation color="black" />,
         cName: 'nav-text'
     },
     {
         title: 'Gestión de contratos',
         path: '/gestion-contratos',
-        icon: <FaIcons.FaFileContract/>,
+        icon: <FaIcons.FaFileContract color="black" />,
         cName: 'nav-text'
     },
     {
         title: 'Listado de actividades',
         path: '/lista-actividades',
-        icon: <RxIcons.RxActivityLog/>,
+        icon: <RxIcons.RxActivityLog color="black" />,
         cName: 'nav-text'
     },
     {
         title: 'Reportes',
         path: '/reportes',
-        icon: <TbIcons.TbReportAnalytics/>,
+        icon: <TbIcons.TbReportAnalytics color="black" />,
         cName: 'nav-text'
     },
     {
         title: 'Cambio de contraseña',
         path: '/cambio-contrasena',
-        icon: <RiIcons.RiLockPasswordFill/>,
+        icon: <RiIcons.RiLockPasswordFill color="black" />,
         cName: 'nav-text'
     }
     // {
