@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './GestionContratos.css'
 
 function GestionContratos() {
 
