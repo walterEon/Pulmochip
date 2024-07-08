@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import './ListaActividades.css';
 
 function ListaActividades() {
 
   return (
-    <h2>
+    <div className="actividades-page">
+      <h2>
         Lista de actividades
-    </h2>
+      </h2>
+    </div>
+    
   );
 }
 

@@ -4,9 +4,12 @@ import './GestionContratos.css'
 function GestionContratos() {
 
   return (
-    <h2>
+    <div className="contratos-page">
+      <h2>
         Gestión de contratos
-    </h2>
+      </h2>
+    </div>
+    
   );
 }
 

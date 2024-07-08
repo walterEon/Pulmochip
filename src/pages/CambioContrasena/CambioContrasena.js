@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import './CambioContrasena.css';
 
 function CambioContrasena() {
 
   return (
-    <h2>
+    <div className="contrasena-page">
+      <h2>
         Cambio de contraseña
-    </h2>
+      </h2>
+    </div>
+    
   );
 }
 
