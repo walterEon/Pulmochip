@@ -1,20 +1,33 @@
 .perfil-page {
-    padding: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    background-color: white;
-    border-radius: 5px;
-  }
-  
-  .perfil-section {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a la pantalla */
-    gap: 10px; /* Espacio entre los elementos */
-  }
-  
-  .perfil-section h3 {
-    width: 100%; /* Hace que el título ocupe todo el ancho */
-    margin-bottom: 10px;
-  }
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.perfil-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a la pantalla */
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+.perfil-section h3 {
+  width: 100%; /* Hace que el título ocupe todo el ancho */
+  margin-bottom: 10px;
+}
+
+.titulo {
+  background-color: #1e88e5;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  padding: 10px 0; /* Añade padding para darle algo de espacio */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  text-align: center; /* Centra el texto horizontalmente */
+  border-top-left-radius: 5px; /* Redondea las esquinas superiores */
+  border-top-right-radius: 5px; /* Redondea las esquinas superiores */
+}
+
+.titulo h2 {
+  color: white;
+  margin: 0; /* Elimina el margen del título */
+}
+

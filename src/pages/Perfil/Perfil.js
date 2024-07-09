@@ -1,21 +1,3 @@
-// import React, { useState } from "react";
-// import '../Perfil/Perfil.css';
-
-// function Perfil() {
-
-//   return (
-//     <div className="perfil">
-//       <h2>
-//         Perfil de usuario
-//       </h2>
-//     </div>
-    
-//   );
-// }
-
-// export default Perfil;
-
-// Perfil.js
 import React from 'react';
 import DataField from '../../components/DataField/DataField.js';
 import { FaUser, FaIdCard, FaBriefcase, FaMapMarkerAlt, FaCalendarAlt, FaRulerVertical, FaWeight } from 'react-icons/fa';
@@ -24,7 +6,9 @@ import './Perfil.css';
 function Perfil() {
   return (
     <div className="perfil-page">
-      <h2>HOJA DE CAMPO</h2>
+      <div className='titulo'>
+        <h2>HOJA DE CAMPO</h2>
+      </div>
       <div className="perfil-section">
         <h3>Información del evaluado</h3>
           <DataField icon={<FaUser />} label="Nombre" value="Juan Quispe" />
