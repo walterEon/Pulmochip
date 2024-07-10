@@ -103,7 +103,7 @@
     background-color: #dc3545;
   }
   
-table button {
+.table button {
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
@@ -114,8 +114,9 @@ table button {
     width: auto;
   }
   
-  table button:hover {
+  .table button:hover {
     background-color: #5a6268;
   }
+  
   
   
