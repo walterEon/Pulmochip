@@ -1,0 +1,44 @@
+.detalle-actividad {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+.detalle-actividad h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .info-box {
+    flex: 1 1 30%; /* Ajusta este valor para cambiar el tamaño de los recuadros */
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-box strong {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .info-box {
+      flex: 1 1 100%;
+    }
+  }
+  
+
+  

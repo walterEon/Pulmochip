@@ -48,6 +48,8 @@ import Perfil from './pages/Perfil/Perfil.js';
 import ListaEmpresas from './pages/ListaEmpresas/ListaEmpresas';
 import GestionContratos from './pages/GestionContratos/GestionContratos';
 import ListaActividades from './pages/ListaActividades/ListaActividades';
+import DetalleActividad from './pages/DetalleActividad/DetalleActividad.js';
+import CrearActividad from './pages/CrearActividad/CrearActividad';
 import Reportes from './pages/Reportes/Reportes';
 import CambioContrasena from './pages/CambioContrasena/CambioContrasena';
 import Navbar from './components/Navbar/Navbar.js';
@@ -71,6 +73,8 @@ function App() {
           <Route path="/lista-empresas" element={<ListaEmpresas />} />
           <Route path="/gestion-contratos" element={<GestionContratos />} />
           <Route path="/lista-actividades" element={<ListaActividades />} />
+          <Route path="/detalle/:id" element={<DetalleActividad />} />
+          <Route path="/crear-actividad" element={<CrearActividad />} />
           <Route path="/reportes" element={<Reportes isSidebarOpen={isSidebarOpen} />} />
           <Route path="/cambio-contrasena" element={<CambioContrasena />} />
         </Routes>

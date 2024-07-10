@@ -1,10 +1,121 @@
-.actividades-page{
+/* .actividades-page{
     padding: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin: 20px;
     background-color: white;
     border-radius: 5px;
     height: 600px;
-}
+} */
+
+.actividades-page {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
+  }
+  
+.actividades-page  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .actividades-page h2 {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .action-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .action-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filtros {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .filtros input, .filtros select, .filtros button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filtros button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .filtros button:hover {
+    background-color: #0056b3;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f8f8f8;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .estado.activo {
+    background-color: #28a745;
+  }
+  
+  .estado.inactivo {
+    background-color: #dc3545;
+  }
+  
+table button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: white;
+    width: auto;
+  }
+  
+  table button:hover {
+    background-color: #5a6268;
+  }
+  
+  
