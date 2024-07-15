@@ -18,7 +18,7 @@ function Reportes({ isSidebarOpen }) {
       }
 
       try {
-        const response = await fetch('http://pulmoc-pulmo-vydtfrp1m0lg-2105162279.us-east-1.elb.amazonaws.com/api/measurements', {
+        const response = await fetch('https://pulmochip.iotomato.com/api/measurements', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

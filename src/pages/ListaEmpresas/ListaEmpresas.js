@@ -30,10 +30,6 @@ function ListaEmpresas() {
     );
   };
 
-  const verDetalles = (id) => {
-    navigate(`/empresa/detalle/${id}`);
-  };
-
   const crearEmpresa = () => {
     navigate(`/crear-empresa`);
   };

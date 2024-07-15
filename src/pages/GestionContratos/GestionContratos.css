@@ -1,15 +1,41 @@
-.contratos-page{
+.contratos-page {
     padding: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin: 20px;
     background-color: white;
     border-radius: 5px;
-    height: 600px;
-}
-
-h2{
-    text-align: center;
+  }
+  
+  .contratos-page h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .gestion-nuevo-contrato {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-}
+  }
+  
+  .gestion-nuevo-contrato button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: auto;
+  }
+  
+  .gestion-nuevo-contrato button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -16,7 +16,7 @@ function Login() {
     };
 
     try {
-      const response = await fetch('http://pulmoc-pulmo-vydtfrp1m0lg-2105162279.us-east-1.elb.amazonaws.com/api/auth/login', {
+      const response = await fetch('https://pulmochip.iotomato.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

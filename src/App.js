@@ -46,7 +46,10 @@ import Health from './pages/Health';
 import './pages/Login/Login.css';
 import Perfil from './pages/Perfil/Perfil.js';
 import ListaEmpresas from './pages/ListaEmpresas/ListaEmpresas';
+import CrearEmpresa from './pages/CrearEmpresa/CrearEmpresa';
 import GestionContratos from './pages/GestionContratos/GestionContratos';
+import CrearContrato from './pages/CrearContrato/CrearContrato';
+import EditarContrato from './pages/EditarContrato/EditarContrato';
 import ListaActividades from './pages/ListaActividades/ListaActividades';
 import DetalleActividad from './pages/DetalleActividad/DetalleActividad.js';
 import CrearActividad from './pages/CrearActividad/CrearActividad';
@@ -71,7 +74,10 @@ function App() {
           <Route path='/health' element={<Health />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/lista-empresas" element={<ListaEmpresas />} />
+          <Route path="/crear-empresa" element={<CrearEmpresa />} />
           <Route path="/gestion-contratos" element={<GestionContratos />} />
+          <Route path="/crear-contrato" element={<CrearContrato />} />
+          <Route path="/editar-contrato/:id" element={<EditarContrato />} />
           <Route path="/lista-actividades" element={<ListaActividades />} />
           <Route path="/detalle/:id" element={<DetalleActividad />} />
           <Route path="/crear-actividad" element={<CrearActividad />} />
