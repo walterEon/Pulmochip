@@ -54,6 +54,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  .filtros span{
+    margin: 5px;
+    padding: 10px;
+  }
   
   .filtros button {
     background-color: #007bff;

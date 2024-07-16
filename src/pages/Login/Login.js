@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import imgpulmo from './pulmochip.jpeg';
+import './Login.css';
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,10 +31,11 @@ function Login() {
         localStorage.setItem('token', data.token);
         navigate('/perfil');
       } else {
-        console.error('Login failed');
+        setError('Usuario o contraseña incorrectos');
       }
     } catch (error) {
       console.error('Error:', error);
+      setError('Error al intentar iniciar sesión');
     }
   };
 
@@ -64,8 +67,13 @@ function Login() {
         </div>
         <button type="submit">Iniciar sesión</button>
       </form>
+
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 }
 
 export default Login;
+
+
+

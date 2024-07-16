@@ -1,20 +1,3 @@
-// import React, { useState } from "react";
-// import './ListaActividades.css';
-
-// function ListaActividades() {
-
-//   return (
-//     <div className="actividades-page">
-//       <h2>
-//         Lista de actividades
-//       </h2>
-//     </div>
-    
-//   );
-// }
-
-// export default ListaActividades;
-
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './ListaActividades.css';
@@ -26,7 +9,6 @@ function ListaActividades() {
   const [filtroFechaDesde, setFiltroFechaDesde] = useState('');
   const [filtroFechaHasta, setFiltroFechaHasta] = useState('');
   const [filtroEstado, setFiltroEstado] = useState('');
-  const [filtroQuimico, setFiltroQuimico] = useState('');
   const [busqueda, setBusqueda] = useState('');
   const [actividades, setActividades] = useState([
     { id: 1, empresa: 'Empresa A', ordenServicio: 'OS123', fechaRegistro: '2024-07-01', horaInicio: '08:00', horaTermino: '17:00', estado: 'Activo' },
@@ -38,7 +20,6 @@ function ListaActividades() {
   const handleFiltroFechaDesde = (e) => setFiltroFechaDesde(e.target.value);
   const handleFiltroFechaHasta = (e) => setFiltroFechaHasta(e.target.value);
   const handleFiltroEstado = (e) => setFiltroEstado(e.target.value);
-  const handleFiltroQuimico = (e) => setFiltroQuimico(e.target.value);
   const handleBusqueda = (e) => setBusqueda(e.target.value);
 
   const limpiarFiltros = () => {
@@ -46,7 +27,6 @@ function ListaActividades() {
     setFiltroFechaDesde('');
     setFiltroFechaHasta('');
     setFiltroEstado('');
-    setFiltroQuimico('');
     setBusqueda('');
   };
 
@@ -68,13 +48,17 @@ function ListaActividades() {
     navigate(`/crear-actividad`);
   };
 
+  const editarActividad = (id) => {
+    navigate(`/editar-actividad/${id}`);
+  };
+
   return (
     <div className="actividades-page">
       <header>
         <h2>Lista de actividades</h2>
         <div className="action-buttons">
           <button onClick={crearActividad}>Agregar Nueva Actividad</button>
-          <button>Exportar a CSV</button>
+          {/* <button>Exportar a CSV</button> */}
         </div>
       </header>
       
@@ -85,15 +69,14 @@ function ListaActividades() {
           <option value="Empresa A">Empresa A</option>
           <option value="Empresa B">Empresa B</option>
         </select>
+        <span>Desde:</span>
         <input type="date" value={filtroFechaDesde} onChange={handleFiltroFechaDesde} />
+        <span>Hasta:</span>
         <input type="date" value={filtroFechaHasta} onChange={handleFiltroFechaHasta} />
         <select value={filtroEstado} onChange={handleFiltroEstado}>
           <option value="">Estado</option>
           <option value="Activo">Activo</option>
           <option value="Inactivo">Inactivo</option>
-        </select>
-        <select value={filtroQuimico} onChange={handleFiltroQuimico}>
-          <option value="">Agente Químico Expuesto</option>
         </select>
         <button onClick={filtrarActividades}>Filtrar</button>
         <button onClick={limpiarFiltros}>Limpiar Filtros</button>
@@ -123,7 +106,7 @@ function ListaActividades() {
                 <span className={`estado ${actividad.estado.toLowerCase()}`}>{actividad.estado}</span>
               </td>
               <td>
-                <button>Editar</button>
+              <button onClick={() => editarActividad(actividad.id)}>Editar</button>
                 <button>Eliminar</button>
                 <button onClick={() => verDetalles(actividad.id)}>Ver Detalles</button>
               </td>
