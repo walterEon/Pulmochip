@@ -8,6 +8,16 @@
     margin-bottom: 20px; 
 }
 
-h2{
+.reportes-page h2{
     text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.reportes-page button {
+    width: auto;
 }
