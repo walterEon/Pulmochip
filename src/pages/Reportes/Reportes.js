@@ -5,39 +5,39 @@
 // import './Reportes.css';
 
 // function Reportes({ isSidebarOpen }) {
-//   const [data, setData] = useState(null);
-//   const [error, setError] = useState(null);
+  // const [data, setData] = useState(null);
+  // const [error, setError] = useState(null);
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const token = localStorage.getItem('token');
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const token = localStorage.getItem('token');
 
-//       if (!token) {
-//         setError(new Error('No token found'));
-//         return;
-//       }
+  //     if (!token) {
+  //       setError(new Error('No token found'));
+  //       return;
+  //     }
 
-//       try {
-//         const response = await fetch('https://pulmochip.iotomato.com/api/measurements', {
-//           method: 'GET',
-//           headers: {
-//             'Authorization': `Bearer ${token}`,
-//             'Content-Type': 'application/json'
-//           }
-//         });
+  //     try {
+  //       const response = await fetch('https://pulmochip.iotomato.com/api/measurements', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Authorization': `Bearer ${token}`,
+  //           'Content-Type': 'application/json'
+  //         }
+  //       });
 
-//         if (!response.ok) {
-//           throw new Error('Network response was not ok');
-//         }
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
 
-//         const result = await response.json();
-//         setData(result);
-//       } catch (error) {
-//         setError(error);
-//       }
-//     };
+  //       const result = await response.json();
+  //       setData(result);
+  //     } catch (error) {
+  //       setError(error);
+  //     }
+  //   };
 
-//     fetchData();
+  //   fetchData();
 //   }, []);
 
 //   if (error) {
@@ -57,14 +57,14 @@
 //       <TemperaturaChart />
 //       <h3>Humedad rel. (%HR)</h3>
 //       <HumedadChart />
-//       {data.map((item) => (
-//         <div key={item.sensorId} className="report-item">
-//           <p>Sensor ID: {item.sensorId}</p>
-//           {item.metadata && (item.metadata.pressure || item.metadata.pression) && (
-//             <p>Presión: {item.metadata.pressure || item.metadata.pression}</p>
-//           )}
-//         </div>
-//       ))}
+      // {data.map((item) => (
+      //   <div key={item.sensorId} className="report-item">
+      //     <p>Sensor ID: {item.sensorId}</p>
+      //     {item.metadata && (item.metadata.pressure || item.metadata.pression) && (
+      //       <p>Presión: {item.metadata.pressure || item.metadata.pression}</p>
+      //     )}
+      //   </div>
+      // ))}
 //     </div>
 //   );
 // }
@@ -78,12 +78,13 @@ import HumedadChart from "../../components/HumedadChart/HumedadChart.js";
 import './Reportes.css';
 
 function Reportes({ isSidebarOpen }) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
   const [presionData, setPresionData] = useState([]);
-  const [temperaturaData, setTemperaturaData] = useState([27]); // Inicializar con un valor
+  const [temperaturaData, setTemperaturaData] = useState([27]);
   const [humedadData, setHumedadData] = useState([]);
   const [presionLabels, setPresionLabels] = useState([]);
   const [tempHumedadLabels, setTempHumedadLabels] = useState([]);
-  const [error, setError] = useState(null);
   const [intervalId, setIntervalId] = useState(null);
   const [isRunning, setIsRunning] = useState(true);
 
@@ -94,10 +95,43 @@ function Reportes({ isSidebarOpen }) {
   };
 
   useEffect(() => {
+
+    const fetchData = async () => {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        setError(new Error('No token found'));
+        return;
+      }
+
+      try {
+        const response = await fetch('https://pulmochip.iotomato.com/api/measurements', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        console.log("result:" +result)
+        setData(result);
+        console.log("data: "+data)
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+
     const id = setInterval(() => {
       setPresionData(prevData => {
         const newData = [...(prevData || []), Math.random() * (998 - 996) + 996];
-        return newData.length > 3500 ? newData.slice(1) : newData;
+        return newData.length > 3600 ? newData.slice(1) : newData;
       });
       setTemperaturaData(prevData => {
         const newData = [...(prevData || []), generateTemperature(prevData[prevData.length - 1] || 26)];
@@ -109,7 +143,7 @@ function Reportes({ isSidebarOpen }) {
       });
       setPresionLabels(prevLabels => {
         const newLabels = [...(prevLabels || []), prevLabels.length];
-        return newLabels.length > 3500 ? newLabels.slice(1) : newLabels;
+        return newLabels.length > 3600 ? newLabels.slice(1) : newLabels;
       });
       setTempHumedadLabels(prevLabels => {
         const newLabels = [...(prevLabels || []), prevLabels.length];
@@ -120,6 +154,8 @@ function Reportes({ isSidebarOpen }) {
     setIntervalId(id);
 
     return () => clearInterval(id);
+
+    
   }, []);
 
   const handleToggle = () => {
@@ -130,7 +166,7 @@ function Reportes({ isSidebarOpen }) {
       const id = setInterval(() => {
         setPresionData(prevData => {
           const newData = [...(prevData || []), Math.random() * (998 - 996) + 996];
-          return newData.length > 3500 ? newData.slice(1) : newData;
+          return newData.length > 3600 ? newData.slice(1) : newData;
         });
         setTemperaturaData(prevData => {
           const newData = [...(prevData || []), generateTemperature(prevData[prevData.length - 1] || 26)];
@@ -142,7 +178,7 @@ function Reportes({ isSidebarOpen }) {
         });
         setPresionLabels(prevLabels => {
           const newLabels = [...(prevLabels || []), prevLabels.length];
-          return newLabels.length > 3500 ? newLabels.slice(1) : newLabels;
+          return newLabels.length > 3600 ? newLabels.slice(1) : newLabels;
         });
         setTempHumedadLabels(prevLabels => {
           const newLabels = [...(prevLabels || []), prevLabels.length];
@@ -160,6 +196,16 @@ function Reportes({ isSidebarOpen }) {
       <div className="button-container">
         <button onClick={handleToggle}>{isRunning ? "Detener" : "Reanudar"}</button>
       </div>
+      {/* {data ? (
+      data.map((item) => (
+        <div key={item.sensorId} className="respirator status">
+          <h3>Estado de la máscara: {item.status}</h3>
+        </div>
+      ))
+    ) : (
+      <p>Cargando datos...</p>
+    )} */}
+
       <h3>Presión (mBar|hPa)</h3>
       <PresionChart data={presionData} labels={presionLabels} />
       <h3>Temperatura (°C)</h3>

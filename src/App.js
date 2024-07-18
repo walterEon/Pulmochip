@@ -22,6 +22,7 @@ import Navbar from './components/Navbar/Navbar.js';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [userType, setUserType] = useState(localStorage.getItem('userType') || 'empresa'); 
   const location = useLocation();
 
   const toggleSidebar = () => {
@@ -30,10 +31,10 @@ function App() {
 
   return (
     <>
-      {location.pathname !== '/' && <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />}
+      {location.pathname !== '/' && <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} userType={userType}/>}
       <div className={`content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route path='/' element={<Login setUserType={setUserType}/>} />
           <Route path='/health' element={<Health />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/lista-empresas" element={<ListaEmpresas />} />
@@ -46,7 +47,7 @@ function App() {
           <Route path="/editar-actividad/:id" element={<EditarActividad />} />
           <Route path="/detalle/:id" element={<DetalleActividad />} />
           <Route path="/crear-actividad" element={<CrearActividad />} />
-          <Route path="/reportes" element={<Reportes isSidebarOpen={isSidebarOpen} />} />
+          <Route path="/reportes" element={<Reportes />} />
           <Route path="/cambio-contrasena" element={<CambioContrasena />} />
         </Routes>
       </div>

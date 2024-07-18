@@ -43,22 +43,5 @@ export const Sidebar = [
         icon: <RiIcons.RiLockPasswordFill color="black" />,
         cName: 'nav-text'
     }
-    // {
-    //     title: 'Perfil de usuario',
-    //     path: '/perfil',
-    //     icon: <FaIcons.FaUser/>,
-    //     cName: 'nav-text'
-    // }
-    // {
-    //     title: 'Perfil de usuario',
-    //     path: '/perfil',
-    //     icon: <FaIcons.FaUser/>,
-    //     cName: 'nav-text'
-    // }
-    // {
-    //     title: 'Perfil de usuario',
-    //     path: '/perfil',
-    //     icon: <FaIcons.FaUser/>,
-    //     cName: 'nav-text'
-    // }
+    
 ]

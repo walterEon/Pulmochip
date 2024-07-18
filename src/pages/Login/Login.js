@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import imgpulmo from './pulmochip.jpeg';
 import './Login.css';
 
-function Login() {
+function Login({ setUserType }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -29,6 +29,8 @@ function Login() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token);
+        localStorage.setItem('userType', "operador"); // Guarda el tipo de usuario en localStorage
+        setUserType("operador");
         navigate('/perfil');
       } else {
         setError('Usuario o contraseña incorrectos');
