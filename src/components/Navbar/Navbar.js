@@ -93,7 +93,7 @@ function Navbar({ toggleSidebar, isSidebarOpen, userType }) {
                     { title: 'Registro de usuarios', path: '/registro-usuarios', icon: <FaIcons.FaUserPlus color="black" />, cName: 'nav-text' },
                     { title: 'Registro de médicos', path: '/registro-medicos', icon: <FaIcons.FaStethoscope color="black" />, cName: 'nav-text' },
                     { title: 'Registro de trabajadores', path: '/registro-trabajadores', icon: <FaIcons.FaUsers color="black" />, cName: 'nav-text' },
-                    { title: 'Registro de empresa', path: '/registro-empresa', icon: <FaIcons.FaBuilding color="black" />, cName: 'nav-text' },
+                    { title: 'Registro de empresa', path: '/registro-empresas', icon: <FaIcons.FaBuilding color="black" />, cName: 'nav-text' },
                     { title: 'Cambio de contraseña', path: '/cambio-contrasena', icon: <RiIcons.RiLockPasswordFill color="black" />, cName: 'nav-text' }
                 ];
             case 'empresa':

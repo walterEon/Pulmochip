@@ -1,0 +1,11 @@
+.actividades-realizadas-page {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    height: 600px;
+  }
+
+  .actividades-realizadas-page h1 {
+    text-align: center;
+  }

@@ -1,0 +1,46 @@
+.guardia-page {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    height: 600px;
+    overflow: auto;
+  }
+  
+  .guardia-page h1 {
+    text-align: center;
+  }
+  
+  .guardia-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .guardia-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .guardia-table th,
+  .guardia-table td {
+    padding: 12px 15px;
+  }
+  
+  .guardia-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .guardia-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .guardia-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  

@@ -1,0 +1,45 @@
+.ocupacion-page {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+  }
+  
+  .ocupacion-page h1 {
+    text-align: center;
+  }
+  
+  .ocupacion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .ocupacion-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .ocupacion-table th,
+  .ocupacion-table td {
+    padding: 12px 15px;
+  }
+  
+  .ocupacion-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .ocupacion-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .ocupacion-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  

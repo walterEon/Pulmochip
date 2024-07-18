@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GestionContratos.css';
-import ContratoCard from '../../components/ContratoCard/ContratoCard';
+import ContratoCard from '../../../components/ContratoCard/ContratoCard';
 
 const contratos = [
   {
