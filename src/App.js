@@ -7,6 +7,7 @@ import './pages/Login/Login.css';
 import Perfil from './pages/Perfil/Perfil.js';
 import ListaEmpresas from './pages/ListaEmpresas/ListaEmpresas';
 import CrearEmpresa from './pages/CrearEmpresa/CrearEmpresa';
+import EditarEmpresa from './pages/EditarEmpresa/EditarEmpresa.js';
 import GestionContratos from './pages/GestionContratos/GestionContratos';
 import CrearContrato from './pages/CrearContrato/CrearContrato';
 import EditarContrato from './pages/EditarContrato/EditarContrato';
@@ -17,6 +18,7 @@ import CrearActividad from './pages/CrearActividad/CrearActividad';
 import Reportes from './pages/Reportes/Reportes';
 import CambioContrasena from './pages/CambioContrasena/CambioContrasena';
 import Navbar from './components/Navbar/Navbar.js';
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -36,6 +38,7 @@ function App() {
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/lista-empresas" element={<ListaEmpresas />} />
           <Route path="/crear-empresa" element={<CrearEmpresa />} />
+          <Route path="/editar-empresa/:id" element={<EditarEmpresa />} />
           <Route path="/gestion-contratos" element={<GestionContratos />} />
           <Route path="/crear-contrato" element={<CrearContrato />} />
           <Route path="/editar-contrato/:id" element={<EditarContrato />} />

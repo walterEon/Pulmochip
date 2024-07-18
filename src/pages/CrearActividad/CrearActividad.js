@@ -232,7 +232,7 @@ function CrearActividad() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="button-container">
           <button type="submit">Crear Actividad</button>
         </div>
       </form>

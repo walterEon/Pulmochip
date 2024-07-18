@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './CrearEmpresa.css';
+import { useParams, useNavigate } from 'react-router-dom';
+import './EditarEmpresa.css';
 
-function CrearEmpresa() {
+function EditarEmpresa() {
   const navigate = useNavigate();
-  const [empresa, setEmpresa] = useState({
-    id: '',
-    RUC: '',
-    name: '',
-    tradename: '',
-    address: '',
-    telephone: '',
-    contactName: '',
-    contactLastname: '',
-    contactLastname2: '',
-    cellphone: '',
-    email: '',
-    activo: ''
-  });
+  const [empresas, setEmpresas] = useState([
+    { id: 1, RUC: '12345678901', name: 'Empresa A', tradename: 'Comercial A', address: 'Calle 1', telephone: '12345678', contactName: 'Juan', contactLastname: 'Perez', contactLastname2: 'Gomez', cellphone: '987654321', email: 'empresaA@mail.com', activo: 'Activo' },
+    { id: 2, RUC: '12345678902', name: 'Empresa B', tradename: 'Comercial B', address: 'Calle 2', telephone: '87654321', contactName: 'Maria', contactLastname: 'Lopez', contactLastname2: 'Martinez', cellphone: '912345678', email: 'empresaB@mail.com', activo: 'Inactivo' }
+  ]);
+
+  const { id } = useParams();
+  const empresaExistente = empresas.find(e => e.id === parseInt(id));
+
+  const [empresa, setEmpresa] = useState(empresaExistente);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,14 +24,14 @@ function CrearEmpresa() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Nueva Empresa:', empresa);
-    // Aquí agregarías la lógica para enviar la nueva empresa a tu backend o actualizar el estado global
-    navigate('/lista-empresas'); // Navegar de vuelta a la lista de empresas
+    console.log('Empresa Editada:', empresa);
+    // lógica para la edicion hacia el backend
+    navigate('/lista-empresas'); // ir de vuelta a la lista de empresas
   };
 
   return (
-    <div className="crear-empresa">
-      <h2>Crear Nueva Empresa</h2>
+    <div className="editar-empresa">
+      <h2>Editar Empresa</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-section">
           <h3>Información General</h3>
@@ -97,11 +92,11 @@ function CrearEmpresa() {
         </div>
 
         <div className="button-container">
-          <button type="submit">Crear Empresa</button>
+          <button type="submit">Guardar cambios</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default CrearEmpresa;
+export default EditarEmpresa;

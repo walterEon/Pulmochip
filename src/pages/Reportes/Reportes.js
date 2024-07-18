@@ -79,13 +79,19 @@ import './Reportes.css';
 
 function Reportes({ isSidebarOpen }) {
   const [presionData, setPresionData] = useState([]);
-  const [temperaturaData, setTemperaturaData] = useState([]);
+  const [temperaturaData, setTemperaturaData] = useState([27]); // Inicializar con un valor
   const [humedadData, setHumedadData] = useState([]);
   const [presionLabels, setPresionLabels] = useState([]);
   const [tempHumedadLabels, setTempHumedadLabels] = useState([]);
   const [error, setError] = useState(null);
   const [intervalId, setIntervalId] = useState(null);
   const [isRunning, setIsRunning] = useState(true);
+
+  const generateTemperature = (prevValue) => {
+    const change = Math.random() < 0.1 ? (Math.random() * 10 - 5) : (Math.random() * 2 - 1);
+    const newValue = prevValue + change;
+    return Math.min(Math.max(newValue, 26), 32); 
+  };
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -94,7 +100,7 @@ function Reportes({ isSidebarOpen }) {
         return newData.length > 3500 ? newData.slice(1) : newData;
       });
       setTemperaturaData(prevData => {
-        const newData = [...(prevData || []), Math.random() * (32 - 26) + 26];
+        const newData = [...(prevData || []), generateTemperature(prevData[prevData.length - 1] || 26)];
         return newData.length > 145 ? newData.slice(1) : newData;
       });
       setHumedadData(prevData => {
@@ -109,7 +115,7 @@ function Reportes({ isSidebarOpen }) {
         const newLabels = [...(prevLabels || []), prevLabels.length];
         return newLabels.length > 145 ? newLabels.slice(1) : newLabels;
       });
-    }, 5000);
+    }, 100);
 
     setIntervalId(id);
 
@@ -127,7 +133,7 @@ function Reportes({ isSidebarOpen }) {
           return newData.length > 3500 ? newData.slice(1) : newData;
         });
         setTemperaturaData(prevData => {
-          const newData = [...(prevData || []), Math.random() * (32 - 26) + 26];
+          const newData = [...(prevData || []), generateTemperature(prevData[prevData.length - 1] || 26)];
           return newData.length > 145 ? newData.slice(1) : newData;
         });
         setHumedadData(prevData => {
@@ -142,7 +148,7 @@ function Reportes({ isSidebarOpen }) {
           const newLabels = [...(prevLabels || []), prevLabels.length];
           return newLabels.length > 145 ? newLabels.slice(1) : newLabels;
         });
-      }, 5000);
+      }, 100);
       setIntervalId(id);
     }
     setIsRunning(!isRunning);
@@ -165,6 +171,7 @@ function Reportes({ isSidebarOpen }) {
 }
 
 export default Reportes;
+
 
 
 

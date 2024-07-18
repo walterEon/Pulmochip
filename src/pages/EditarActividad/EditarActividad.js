@@ -220,8 +220,9 @@ function EditarActividad() {
             </div>
           </div>
         </div>
-
-        <button type="submit">Guardar Cambios</button>
+        <div className='button-container'>
+          <button type="submit">Guardar Cambios</button>
+        </div>          
       </form>
     </div>
   );

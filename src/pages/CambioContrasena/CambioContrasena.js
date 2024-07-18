@@ -49,7 +49,11 @@ function CambioContrasena() {
           />
         </div>
         {error && <div className="error">{error}</div>}
-        <button type="submit" className="button">Cambiar contraseña</button>
+        <div className="button-container">
+          <button type="submit" className="button">Cambiar contraseña</button>
+        </div>
+
+        
       </form>
     </div>
   );

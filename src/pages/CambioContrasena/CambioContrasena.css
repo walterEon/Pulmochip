@@ -44,10 +44,16 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+    width: auto;
 }
 
 .button:hover {
     background-color: #1565c0;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
 }
 
 .error {

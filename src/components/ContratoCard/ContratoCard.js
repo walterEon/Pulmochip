@@ -6,8 +6,8 @@ function ContratoCard({ contrato }) {
 
     const navigate = useNavigate();
 
-  const editarContrato = () => {
-    navigate(`/editar-contrato/${contrato.id}`);
+  const editarContrato = (id) => {
+    navigate(`/editar-contrato/${id}`);
   };
 
   return (
@@ -22,7 +22,7 @@ function ContratoCard({ contrato }) {
         <p><strong>Cantidad de Trabajadores:</strong> {contrato.quantity}</p>
         <p><strong>Número de Orden de Servicio:</strong> {contrato.serviceOrder}</p>
         <p><strong>Estado:</strong> <span className={`estado ${contrato.activo.toLowerCase()}`}>{contrato.activo}</span></p>
-        <button onClick={editarContrato}>Editar</button>
+        <button onClick={() => editarContrato(contrato.id)}>Editar</button>
       </div>
     </div>
   );

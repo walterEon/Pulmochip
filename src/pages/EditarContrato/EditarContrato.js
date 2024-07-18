@@ -48,8 +48,8 @@ function EditarContrato() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Contrato Editado:', contrato);
-    // Aquí agregarías la lógica para enviar la edición del contrato a tu backend o actualizar el estado global
-    navigate('/gestion-contratos'); // Navegar de vuelta a la gestión de contratos
+    // lógica para la edicion hacia el backend
+    navigate('/gestion-contratos'); // ir de vuelta a la gestión de contratos
   };
 
   return (
@@ -102,7 +102,7 @@ function EditarContrato() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="button-container">
           <button type="submit">Guardar Cambios</button>
         </div>
       </form>

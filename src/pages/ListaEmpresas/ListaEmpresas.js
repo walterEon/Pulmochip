@@ -24,7 +24,7 @@ function ListaEmpresas() {
 
   const filtrarEmpresas = () => {
     return empresas.filter(empresa => 
-      (filtroNombre === '' || empresa.name.includes(filtroNombre)) &&
+      (filtroNombre === '' || empresa.name.toLowerCase().includes(filtroNombre)) &&
       (filtroRUC === '' || empresa.RUC.includes(filtroRUC)) &&
       (busqueda === '' || empresa.id.toString().includes(busqueda) || empresa.name.includes(busqueda))
     );
@@ -32,6 +32,10 @@ function ListaEmpresas() {
 
   const crearEmpresa = () => {
     navigate(`/crear-empresa`);
+  };
+
+  const editarEmpresa = (id) => {
+    navigate(`/editar-empresa/${id}`);
   };
 
   return (
@@ -79,7 +83,7 @@ function ListaEmpresas() {
               <td>{empresa.cellphone}</td>
               <td>{empresa.email}</td>
               <td>
-                <button>Editar</button>
+                <button onClick={() => editarEmpresa(empresa.id)}>Editar</button>
                 <button>Eliminar</button>
               </td>
             </tr>
