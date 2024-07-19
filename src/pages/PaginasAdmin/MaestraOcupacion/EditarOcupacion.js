@@ -1,7 +1,6 @@
-import React from 'react';
-import './MaestraOcupacion.css';
-import * as FaIcons from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import './EditarOcupacion.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const data = [
   { id: 1, Area: 'Mina', Occupation: 'Operador de Cargador Frontal' },
@@ -83,50 +82,57 @@ const data = [
   { id: 77, Area: 'Planeamiento', Occupation: 'Operador de Planta shotcrete' },
 ];
 
-
-
-function MaestraOcupacion() {
-
-  const navigate = useNavigate();
-
-  const editarOcupacion = (id) => {
-    navigate(`/editar-ocupacion/${id}`);
-  };
-
-  const agregarOcupacion = () => {
-    navigate(`/editar-ocupacion/new`);
-  };
-
-  return (
-    <div className="ocupacion-page">
-      <h1>Tabla Ocupación</h1>
-      
-      <table className="ocupacion-table">
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>Area</th>
-            <th>Occupation</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row) => (
-            <tr key={row.id}>
-              <td>{row.id}</td>
-              <td>{row.Area}</td>
-              <td>{row.Occupation}</td>
-              <td className='icono-cell'><FaIcons.FaEdit className='icono-editar' color="black" onClick={() => editarOcupacion(row.id)}/></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className='button-container'>
-        <button onClick={agregarOcupacion}>Agregar Nueva Ocupación</button>
+function EditarOcupacion() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const isNew = id === 'new';
+    const newId = data.length+1;
+    const ocupacionExistente = isNew ? { id: newId, Area: '', Occupation: '' } : data.find(c => c.id === parseInt(id));
+    const [ocupacion, setOcupacion] = useState(ocupacionExistente);
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setOcupacion({
+        ...ocupacion,
+        [name]: value
+      });
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(isNew ? 'Nueva Ocupación:' : 'Ocupación Editada:', ocupacion);
+      // lógica para la edición/creación hacia el backend
+      navigate('/maestra-ocupacion'); // volver a la gestión de ocupaciones
+    };
+  
+    return (
+      <div className="editar-ocupacion">
+        <h2>{isNew ? 'Agregar Nueva Ocupación' : 'Editar Ocupación'}</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-section">
+            <h3>Información General</h3>
+            <div className="grid-container">
+              <div className="form-group">
+                <label>id Ocupación</label>
+                <input type="text" name="id" value={ocupacion.id} onChange={handleChange} disabled />
+              </div>
+              <div className="form-group">
+                <label>Área</label>
+                <input type="text" name="Area" value={ocupacion.Area} onChange={handleChange} />
+              </div>
+              <div className="form-group">
+                <label>Ocupación</label>
+                <input type="text" name="Occupation" value={ocupacion.Occupation} onChange={handleChange} required />
+              </div>
+            </div>
+          </div>
+  
+          <div className="button-container">
+            <button type="submit">{isNew ? 'Agregar Ocupación' : 'Guardar Cambios'}</button>
+          </div>
+        </form>
       </div>
-    </div>
-  );
-}
-
-export default MaestraOcupacion;
-
+    );
+  }
+  
+  export default EditarOcupacion;

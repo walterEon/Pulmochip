@@ -10,6 +10,21 @@
   .guardia-page h1 {
     text-align: center;
   }
+
+  .guardia-page button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .guardia-page button:hover {
+    background-color: #007f63;
+  }
   
   .guardia-table {
     width: 100%;
@@ -42,5 +57,19 @@
   
   .guardia-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+  }
+
+  .icono-cell{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .icono-editar{
+    cursor: pointer;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
   }
   

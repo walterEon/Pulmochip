@@ -20,10 +20,17 @@ import CambioContrasena from './pages/CambioContrasena/CambioContrasena';
 
 
 import MaestraGuardia from './pages/PaginasAdmin/MaestraGuardia/MaestraGuardia.js';
+import EditarGuardia from './pages/PaginasAdmin/MaestraGuardia/EditarGuardia.js';
 import MaestraOcupacion from './pages/PaginasAdmin/MaestraOcupacion/MaestraOcupacion.js';
+import EditarOcupacion from './pages/PaginasAdmin/MaestraOcupacion/EditarOcupacion.js';
 import MaestraCondicionLaboral from './pages/PaginasAdmin/MaestraCondicionLaboral/MaestraCondicionLaboral.js';
+import EditarCondicionLaboral from './pages/PaginasAdmin/MaestraCondicionLaboral/EditarCondicionLaboral.js';
 import MaestraMarcasModelos from './pages/PaginasAdmin/MaestraMarcasModelos/MaestraMarcasModelos.js';
-import MaestraMenus from './pages/PaginasAdmin/MaestraMenus/MaestraMenus.js';
+import EditarCartucho from './pages/PaginasAdmin/MaestraMarcasModelos/EditarCartucho.js';
+import EditarFiltro from './pages/PaginasAdmin/MaestraMarcasModelos/EditarFiltro.js';
+import EditarRespirador from './pages/PaginasAdmin/MaestraMarcasModelos/EditarRespirador.js';
+import MaestraFactoresRiesgo from './pages/PaginasAdmin/MaestraFactoresRiesgo/MaestraFactoresRiesgo.js';
+import EditarFactorRiesgo from './pages/PaginasAdmin/MaestraFactoresRiesgo/EditarFactorRiesgo.js';
 
 import RegistroEmpresas from './pages/PaginasOperador/RegistroEmpresas/RegistroEmpresas.js';
 import RegistroMedicos from './pages/PaginasOperador/RegistroMedicos/RegistroMedicos.js';
@@ -37,6 +44,7 @@ import IndicadoresActividad from './pages/PaginasCliente/IndicadoresActividad/In
 import IndicadoresContrato from './pages/PaginasCliente/IndicadoresContrato/IndicadoresContrato.js';
 
 import Navbar from './components/Navbar/Navbar.js';
+
 
 
 function App() {
@@ -64,10 +72,20 @@ function App() {
           {/* Páginas de Administrador */}
 
           <Route path="/maestra-ocupacion" element={<MaestraOcupacion />} />
+          <Route path="/editar-ocupacion/:id" element={<EditarOcupacion />} />
+
           <Route path="/maestra-guardia" element={<MaestraGuardia />} />
+          <Route path="/editar-guardia/:id" element={<EditarGuardia />} />
+
           <Route path="/maestra-condicion-laboral" element={<MaestraCondicionLaboral />} />
+          <Route path="/editar-condicion-laboral/:id" element={<EditarCondicionLaboral />} />
+
           <Route path="/maestra-marcas-modelos" element={<MaestraMarcasModelos />} />
-          <Route path="/maestra-menus" element={<MaestraMenus />} />
+          <Route path="/editar-cartucho/:id" element={<EditarCartucho />} />
+          <Route path="/editar-filtro/:id" element={<EditarFiltro />} />
+          <Route path="/editar-respirador/:id" element={<EditarRespirador />} />
+          <Route path="/maestra-factores-riesgo" element={<MaestraFactoresRiesgo />} />
+          <Route path="/editar-factor-riesgo/:id" element={<EditarFactorRiesgo />} />
 
 
           {/* Páginas de Operador */}

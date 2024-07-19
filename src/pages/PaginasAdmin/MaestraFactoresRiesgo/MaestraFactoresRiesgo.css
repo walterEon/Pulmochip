@@ -1,0 +1,77 @@
+
+
+.factores-riesgo-page {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  height: 600px;
+  overflow: auto;
+}
+
+.factores-riesgo-page h1 {
+  text-align: center;
+}
+
+.factores-riesgo-page button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #009879;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+.factores-riesgo-page button:hover {
+  background-color: #007f63;
+}
+
+.tabla-factores-riesgo {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-factores-riesgo thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.tabla-factores-riesgo th,
+.tabla-factores-riesgo td {
+  padding: 12px 15px;
+}
+
+.tabla-factores-riesgo tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.tabla-factores-riesgo tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.tabla-factores-riesgo tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.icono-cell{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icono-editar{
+  cursor: pointer;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+

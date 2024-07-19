@@ -84,7 +84,7 @@ function Navbar({ toggleSidebar, isSidebarOpen, userType }) {
                     { title: 'Maestra Guardia', path: '/maestra-guardia', icon: <FaIcons.FaClock color="black" />, cName: 'nav-text' },
                     { title: 'Maestra Condición Laboral', path: '/maestra-condicion-laboral', icon: <FaIcons.FaBuilding color="black" />, cName: 'nav-text' },
                     { title: 'Maestra Marcas y Modelos', path: '/maestra-marcas-modelos', icon: <FaIcons.FaTags color="black" />, cName: 'nav-text' },
-                    { title: 'Maestra Menús', path: '/maestra-menus', icon: <FaIcons.FaBars color="black" />, cName: 'nav-text' },
+                    { title: 'Maestra Factores de Riesgo', path: '/maestra-factores-riesgo', icon: <CgIcons.CgDanger color="black" />, cName: 'nav-text' },
                     { title: 'Cambio de contraseña', path: '/cambio-contrasena', icon: <RiIcons.RiLockPasswordFill color="black" />, cName: 'nav-text' }
                 ];
             case 'operador':

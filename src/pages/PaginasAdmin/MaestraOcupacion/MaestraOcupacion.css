@@ -9,6 +9,21 @@
   .ocupacion-page h1 {
     text-align: center;
   }
+
+  .ocupacion-page button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .ocupacion-page button:hover {
+    background-color: #007f63;
+  }
   
   .ocupacion-table {
     width: 100%;
@@ -41,5 +56,19 @@
   
   .ocupacion-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+  }
+
+  .icono-cell{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .icono-editar{
+    cursor: pointer;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
   }
   
