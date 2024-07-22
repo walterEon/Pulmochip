@@ -1,11 +1,74 @@
-.trabajadores-page{
+.trabajadores-page {
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 5px;
-    height: 600px;
-}
-
-.trabajadores-page h1{
+  }
+  
+  .trabajadores-page h1 {
     text-align: center;
-}
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .trabajadores-page button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .trabajadores-page button:hover {
+    background-color: #007f63;
+  }
+
+  .trabajadores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  
+  .trabajadores-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .trabajadores-table th,
+  .trabajadores-table td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .trabajadores-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .trabajadores-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .trabajadores-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+
+  .icono-cell {
+    text-align: center;
+  }
+  
+  .icono-editar {
+    cursor: pointer;
+    font-size: 20px;
+  }

@@ -29,8 +29,8 @@ function Login({ setUserType }) {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token);
-        localStorage.setItem('userType', "administrador"); // Guarda el tipo de usuario en localStorage
-        setUserType("administrador");
+        localStorage.setItem('userType', "operador"); // Guarda el tipo de usuario en localStorage
+        setUserType("operador");
         navigate('/perfil');
       } else {
         setError('Usuario o contraseña incorrectos');

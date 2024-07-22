@@ -1,11 +1,74 @@
-.usuarios-page{
+.usuarios-page {
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 5px;
-    height: 600px;
-}
-
-.usuarios-page h1{
+  }
+  
+  .usuarios-page h1 {
     text-align: center;
-}
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .usuarios-page button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .usuarios-page button:hover {
+    background-color: #007f63;
+  }
+
+  .tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tabla-usuarios thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .tabla-usuarios th,
+  .tabla-usuarios td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .tabla-usuarios tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .tabla-usuarios tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .tabla-usuarios tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+
+  .icono-cell {
+    text-align: center;
+  }
+  
+  .icono-editar {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  

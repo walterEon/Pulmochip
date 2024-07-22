@@ -36,6 +36,8 @@ import RegistroEmpresas from './pages/PaginasOperador/RegistroEmpresas/RegistroE
 import RegistroMedicos from './pages/PaginasOperador/RegistroMedicos/RegistroMedicos.js';
 import RegistroTrabajadores from './pages/PaginasOperador/RegistroTrabajadores/RegistroTrabajadores.js';
 import RegistroUsuarios from './pages/PaginasOperador/RegistroUsuarios/RegistroUsuarios.js';
+import NuevoTrabajador from './pages/PaginasOperador/RegistroTrabajadores/NuevoTrabajador.js';
+import NuevoUsuario from './pages/PaginasOperador/RegistroUsuarios/NuevoUsuario.js';
 
 import ListaTrabajadores from './pages/PaginasCliente/ListaTrabajadores/ListaTrabajadores.js';
 import ActividadesRealizadas from './pages/PaginasCliente/ActividadesRealizadas/ActividadesRealizadas.js';
@@ -91,8 +93,10 @@ function App() {
           {/* Páginas de Operador */}
 
           <Route path="/registro-usuarios" element={<RegistroUsuarios />} />
+          <Route path="/nuevo-usuario/:id" element={<NuevoUsuario />} />
           <Route path="/registro-medicos" element={<RegistroMedicos />} />
           <Route path="/registro-trabajadores" element={<RegistroTrabajadores />} />
+          <Route path="/nuevo-trabajador/:id" element={<NuevoTrabajador />} />
           <Route path="/registro-empresas" element={<RegistroEmpresas />} />
 
           {/* Páginas de Empresa */}
