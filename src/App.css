@@ -1,6 +1,6 @@
-body{
+/* App.css */
+body {
   background-color: #d9d9d9;
-  
 }
 
 .content {
@@ -10,6 +10,9 @@ body{
 .content.sidebar-open {
   margin-left: 250px; /* Ajusta este valor según el ancho de tu sidebar */
 }
+
+
+
 
 
 

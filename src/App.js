@@ -1,3 +1,4 @@
+// App.js
 import './App.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useState } from 'react';
@@ -17,7 +18,6 @@ import DetalleActividad from './pages/PaginasEmpresa/DetalleActividad/DetalleAct
 import CrearActividad from './pages/PaginasEmpresa/CrearActividad/CrearActividad.js';
 import Reportes from './pages/Reportes/Reportes';
 import CambioContrasena from './pages/CambioContrasena/CambioContrasena';
-
 
 import MaestraGuardia from './pages/PaginasAdmin/MaestraGuardia/MaestraGuardia.js';
 import EditarGuardia from './pages/PaginasAdmin/MaestraGuardia/EditarGuardia.js';
@@ -50,8 +50,6 @@ import IndicadoresContrato from './pages/PaginasCliente/IndicadoresContrato/Indi
 
 import Navbar from './components/Navbar/Navbar.js';
 
-
-
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userType, setUserType] = useState(localStorage.getItem('userType') || 'empresa'); 
@@ -61,30 +59,26 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const isLoginPage = location.pathname === '/';
+
   return (
     <>
-      {location.pathname !== '/' && <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} userType={userType}/>}
-      <div className={`content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+      {!isLoginPage && <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} userType={userType}/>}
+      <div className={`content ${isSidebarOpen && !isLoginPage ? 'sidebar-open' : ''}`}>
         <Routes>
-
           {/* Páginas Comunes */}
-
           <Route path='/' element={<Login setUserType={setUserType}/>} />
           <Route path='/health' element={<Health />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/cambio-contrasena" element={<CambioContrasena />} />
 
           {/* Páginas de Administrador */}
-
           <Route path="/maestra-ocupacion" element={<MaestraOcupacion />} />
           <Route path="/editar-ocupacion/:id" element={<EditarOcupacion />} />
-
           <Route path="/maestra-guardia" element={<MaestraGuardia />} />
           <Route path="/editar-guardia/:id" element={<EditarGuardia />} />
-
           <Route path="/maestra-condicion-laboral" element={<MaestraCondicionLaboral />} />
           <Route path="/editar-condicion-laboral/:id" element={<EditarCondicionLaboral />} />
-
           <Route path="/maestra-marcas-modelos" element={<MaestraMarcasModelos />} />
           <Route path="/editar-cartucho/:id" element={<EditarCartucho />} />
           <Route path="/editar-filtro/:id" element={<EditarFiltro />} />
@@ -92,9 +86,7 @@ function App() {
           <Route path="/maestra-factores-riesgo" element={<MaestraFactoresRiesgo />} />
           <Route path="/editar-factor-riesgo/:id" element={<EditarFactorRiesgo />} />
 
-
           {/* Páginas de Operador */}
-
           <Route path="/registro-usuarios" element={<RegistroUsuarios />} />
           <Route path="/nuevo-usuario/:id" element={<NuevoUsuario />} />
           <Route path="/registro-medicos" element={<RegistroMedicos />} />
@@ -105,32 +97,25 @@ function App() {
           <Route path="/nueva-empresa/:id" element={<NuevaEmpresa />} />
 
           {/* Páginas de Empresa */}
-
           <Route path="/lista-empresas" element={<ListaEmpresas />} />
           <Route path="/crear-empresa" element={<CrearEmpresa />} />
           <Route path="/editar-empresa/:id" element={<EditarEmpresa />} />
-
           <Route path="/gestion-contratos" element={<GestionContratos />} />
           <Route path="/crear-contrato" element={<CrearContrato />} />
           <Route path="/editar-contrato/:id" element={<EditarContrato />} />
-
           <Route path="/lista-actividades" element={<ListaActividades />} />
           <Route path="/editar-actividad/:id" element={<EditarActividad />} />
           <Route path="/detalle/:id" element={<DetalleActividad />} />
           <Route path="/crear-actividad" element={<CrearActividad />} />
-
           <Route path="/reportes" element={<Reportes />} />
 
           {/* Páginas de Cliente */}
-
           <Route path="/lista-trabajadores" element={<ListaTrabajadores />} />
           <Route path="/ver-trabajador/:id" element={<DetalleTrabajador />} />
           <Route path="/actividades-realizadas" element={<ActividadesRealizadas />} />
           <Route path="/indicadores-trabajador" element={<IndicadoresTrabajador />} />
           <Route path="/indicadores-actividad" element={<IndicadoresActividad />} />
           <Route path="/indicadores-contrato" element={<IndicadoresContrato />} />
-
-          
         </Routes>
       </div>
     </>
@@ -138,4 +123,5 @@ function App() {
 }
 
 export default App;
+
 
