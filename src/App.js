@@ -33,6 +33,7 @@ import MaestraFactoresRiesgo from './pages/PaginasAdmin/MaestraFactoresRiesgo/Ma
 import EditarFactorRiesgo from './pages/PaginasAdmin/MaestraFactoresRiesgo/EditarFactorRiesgo.js';
 
 import RegistroEmpresas from './pages/PaginasOperador/RegistroEmpresas/RegistroEmpresas.js';
+import NuevaEmpresa from './pages/PaginasOperador/RegistroEmpresas/NuevaEmpresa.js';
 import RegistroMedicos from './pages/PaginasOperador/RegistroMedicos/RegistroMedicos.js';
 import RegistroTrabajadores from './pages/PaginasOperador/RegistroTrabajadores/RegistroTrabajadores.js';
 import RegistroUsuarios from './pages/PaginasOperador/RegistroUsuarios/RegistroUsuarios.js';
@@ -98,6 +99,7 @@ function App() {
           <Route path="/registro-trabajadores" element={<RegistroTrabajadores />} />
           <Route path="/nuevo-trabajador/:id" element={<NuevoTrabajador />} />
           <Route path="/registro-empresas" element={<RegistroEmpresas />} />
+          <Route path="/nueva-empresa/:id" element={<NuevaEmpresa />} />
 
           {/* Páginas de Empresa */}
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NuevoTrabajador.css';
 
+
 const factoresRiesgo = [
     { id: 1, factor: 'Neumoconiosis 0/1' },
     { id: 2, factor: 'Neumoconiosis 1/0' },
@@ -147,7 +148,7 @@ const initialWorkers = [
       dni: '87654321',
       birthday: '1990-01-02',
       company: 'Company B',
-      workCondition: 1,
+      workCondition: 2,
       dateEntry: '2024-01-02',
       area: 2,
       occupation: 2,
@@ -163,7 +164,7 @@ const initialWorkers = [
 
 
 
-function NuevoTrabajador() {
+  function NuevoTrabajador() {
     const { id } = useParams();
     const navigate = useNavigate();
     const isNew = id === 'new';
@@ -189,12 +190,14 @@ function NuevoTrabajador() {
 
     const [newWorker, setNewWorker] = useState(trabajadorExistente);
     const [workers, setWorkers] = useState(initialWorkers);
+    const [filteredOccupations, setFilteredOccupations] = useState([]);
 
     useEffect(() => {
         if (!isNew) {
             const workerToEdit = workers.find(worker => worker.idTrabajador === parseInt(id));
             if (workerToEdit) {
                 setNewWorker(workerToEdit);
+                setFilteredOccupations(occupationData.filter(occ => occ.Area === workerToEdit.area));
             }
         }
     }, [id, workers, isNew]);
@@ -204,6 +207,24 @@ function NuevoTrabajador() {
         setNewWorker({
             ...newWorker,
             [name]: value
+        });
+    };
+
+    const handleAreaChange = (e) => {
+        const selectedArea = e.target.value;
+        setNewWorker({
+            ...newWorker,
+            area: selectedArea,
+            occupation: ''
+        });
+        setFilteredOccupations(occupationData.filter(occ => occ.Area === selectedArea));
+    };
+
+    const handleOccupationChange = (e) => {
+        const selectedOccupationId = e.target.value;
+        setNewWorker({
+            ...newWorker,
+            occupation: selectedOccupationId
         });
     };
 
@@ -250,7 +271,7 @@ function NuevoTrabajador() {
                             <select name="riskFactor" value={newWorker.riskFactor} onChange={handleChange}>
                                 {factoresRiesgo.map(factor => (
                                     <option key={factor.id} value={`${factor.id}`}>{factor.factor}</option>
-                                    ))}
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -264,7 +285,11 @@ function NuevoTrabajador() {
                         </div>
                         <div className="form-group">
                             <label>Condición laboral:</label>
-                            <input type="text" name="workCondition" value={newWorker.workCondition} onChange={handleChange} />
+                            <select name="workCondition" value={newWorker.workCondition} onChange={handleChange}>
+                                {workConditionData.map(condition => (
+                                    <option key={condition.id} value={`${condition.id}`}>{condition.WorkCondition}</option>
+                                ))}
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Fecha de entrada:</label>
@@ -272,15 +297,29 @@ function NuevoTrabajador() {
                         </div>
                         <div className="form-group">
                             <label>Área:</label>
-                            <input type="text" name="area" value={newWorker.area} onChange={handleChange} />
+                            <select name="area" value={newWorker.area} onChange={handleAreaChange}>
+                                <option value="">Seleccione un área</option>
+                                {Array.from(new Set(occupationData.map(occupation => occupation.Area))).map((area, index) => (
+                                    <option key={index} value={area}>{area}</option>
+                                ))}
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Ocupación:</label>
-                            <input type="text" name="occupation" value={newWorker.occupation} onChange={handleChange} />
+                            <select name="occupation" value={newWorker.occupation} onChange={handleOccupationChange} disabled={!newWorker.area}>
+                                <option value="">Seleccione una ocupación</option>
+                                {filteredOccupations.map(occupation => (
+                                    <option key={occupation.id} value={`${occupation.id}`}>{occupation.Occupation}</option>
+                                ))}
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Guardia:</label>
-                            <input type="text" name="schedule" value={newWorker.schedule} onChange={handleChange} />
+                            <select name="schedule" value={newWorker.schedule} onChange={handleChange}>
+                                {scheduleData.map(schedule => (
+                                    <option key={schedule.id} value={`${schedule.id}`}>{schedule.Schedule}</option>
+                                ))}
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -289,8 +328,8 @@ function NuevoTrabajador() {
                     <h2>Información de la prueba</h2>
                     <div className='grid-container'>
                         <div className="form-group">
-                        <label>Sede:</label>
-                        <input type="text" name="headquarters" value={newWorker.headquarters} onChange={handleChange} />
+                            <label>Sede:</label>
+                            <input type="text" name="headquarters" value={newWorker.headquarters} onChange={handleChange} />
                         </div>
                         <div className="form-group">
                             <label>Ubicación:</label>
