@@ -1,11 +1,74 @@
-.medicos-page{
+.medicos-page {
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 5px;
-    height: 600px;
-}
-
-.medicos-page h1{
+  }
+  
+  .medicos-page h1 {
     text-align: center;
-}
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .button-container button:hover {
+    background-color: #007f63;
+  }
+  
+  .medicos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  
+  .medicos-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .medicos-table th, .medicos-table td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .medicos-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .medicos-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .medicos-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .icono-cell {
+    text-align: center;
+  }
+  
+  .icono-editar {
+    cursor: pointer;
+  }

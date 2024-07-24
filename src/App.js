@@ -35,6 +35,7 @@ import EditarFactorRiesgo from './pages/PaginasAdmin/MaestraFactoresRiesgo/Edita
 import RegistroEmpresas from './pages/PaginasOperador/RegistroEmpresas/RegistroEmpresas.js';
 import NuevaEmpresa from './pages/PaginasOperador/RegistroEmpresas/NuevaEmpresa.js';
 import RegistroMedicos from './pages/PaginasOperador/RegistroMedicos/RegistroMedicos.js';
+import NuevoMedico from './pages/PaginasOperador/RegistroMedicos/NuevoMedico.js';
 import RegistroTrabajadores from './pages/PaginasOperador/RegistroTrabajadores/RegistroTrabajadores.js';
 import RegistroUsuarios from './pages/PaginasOperador/RegistroUsuarios/RegistroUsuarios.js';
 import NuevoTrabajador from './pages/PaginasOperador/RegistroTrabajadores/NuevoTrabajador.js';
@@ -96,6 +97,7 @@ function App() {
           <Route path="/registro-usuarios" element={<RegistroUsuarios />} />
           <Route path="/nuevo-usuario/:id" element={<NuevoUsuario />} />
           <Route path="/registro-medicos" element={<RegistroMedicos />} />
+          <Route path="/nuevo-medico/:id" element={<NuevoMedico />} />
           <Route path="/registro-trabajadores" element={<RegistroTrabajadores />} />
           <Route path="/nuevo-trabajador/:id" element={<NuevoTrabajador />} />
           <Route path="/registro-empresas" element={<RegistroEmpresas />} />

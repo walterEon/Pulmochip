@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NuevaEmpresa.css';
@@ -22,7 +21,7 @@ const initialCompanies = [
       ruc: '10987654321',
       name: 'Global Solutions Ltd.',
       tradename: 'GlobalSol',
-      Address: 'Calle Secundaria 456',
+      address: 'Calle Secundaria 456',
       phone: '976543210',
       contactName: 'María',
       contactLastname: 'Lopez',
@@ -84,60 +83,60 @@ function NuevaEmpresa() {
   };
 
   return (
-    <div classname="nueva-empresa-page">
+    <div className="nueva-empresa-page">
       <h1>{isNew ? 'Agregar Nueva Empresa' : 'Editar Empresa'}</h1>
       <form onSubmit={handleSubmit}>
-        <div classname='form-section'>
+        <div className='form-section'>
           <h2>Información de la Empresa</h2>
-          <div classname='grid-container'>
-            <div classname="form-group">
-              <label>ruc:</label>
+          <div className='grid-container'>
+            <div className="form-group">
+              <label>RUC:</label>
               <input type="text" name="ruc" value={newCompany.ruc} onChange={handleChange} maxLength="11" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Razón Social:</label>
               <input type="text" name="name" value={newCompany.name} onChange={handleChange} maxLength="50" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Nombre Comercial:</label>
               <input type="text" name="tradename" value={newCompany.tradename} onChange={handleChange} maxLength="30" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Dirección:</label>
               <input type="text" name="Address" value={newCompany.address} onChange={handleChange} maxLength="50" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Teléfono:</label>
               <input type="text" name="phone" value={newCompany.phone} onChange={handleChange} maxLength="8" />
             </div>
           </div>
         </div>
-        <div classname='form-section'>
+        <div className='form-section'>
           <h2>Información de Contacto</h2>
-          <div classname='grid-container'>
-            <div classname="form-group">
+          <div className='grid-container'>
+            <div className="form-group">
               <label>Nombre del Contacto:</label>
               <input type="text" name="contactName" value={newCompany.contactName} onChange={handleChange} maxLength="30" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Apellido Paterno del Contacto:</label>
               <input type="text" name="contactLastname" value={newCompany.contactLastname} onChange={handleChange} maxLength="30" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Apellido Materno del Contacto:</label>
               <input type="text" name="contactLastname2" value={newCompany.contactLastname2} onChange={handleChange} maxLength="30" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>Celular del Contacto:</label>
               <input type="text" name="cellphone" value={newCompany.cellphone} onChange={handleChange} maxLength="9" />
             </div>
-            <div classname="form-group">
+            <div className="form-group">
               <label>email:</label>
               <input type="email" name="email" value={newCompany.email} onChange={handleChange} maxLength="50" />
             </div>
           </div>
         </div>
-        <div classname="button-container">
+        <div className="button-container">
           <button type="submit">{isNew ? 'Agregar' : 'Guardar'}</button>
           <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
