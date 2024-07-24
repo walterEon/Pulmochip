@@ -42,6 +42,7 @@ import NuevoTrabajador from './pages/PaginasOperador/RegistroTrabajadores/NuevoT
 import NuevoUsuario from './pages/PaginasOperador/RegistroUsuarios/NuevoUsuario.js';
 
 import ListaTrabajadores from './pages/PaginasCliente/ListaTrabajadores/ListaTrabajadores.js';
+import DetalleTrabajador from './pages/PaginasCliente/ListaTrabajadores/DetalleTrabajador.js';
 import ActividadesRealizadas from './pages/PaginasCliente/ActividadesRealizadas/ActividadesRealizadas.js';
 import IndicadoresTrabajador from './pages/PaginasCliente/IndicadoresTrabajador/IndicadoresTrabajador.js';
 import IndicadoresActividad from './pages/PaginasCliente/IndicadoresActividad/IndicadoresActividad.js';
@@ -123,6 +124,7 @@ function App() {
           {/* Páginas de Cliente */}
 
           <Route path="/lista-trabajadores" element={<ListaTrabajadores />} />
+          <Route path="/ver-trabajador/:id" element={<DetalleTrabajador />} />
           <Route path="/actividades-realizadas" element={<ActividadesRealizadas />} />
           <Route path="/indicadores-trabajador" element={<IndicadoresTrabajador />} />
           <Route path="/indicadores-actividad" element={<IndicadoresActividad />} />

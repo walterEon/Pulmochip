@@ -1,11 +1,74 @@
-.trabajadores-page {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 5px;
-    height: 600px;
-  }
+.lista-trabajadores-page {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
 
-  .trabajadores-page h1 {
-    text-align: center;
-  }
+.lista-trabajadores-page h1 {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.lista-trabajadores-page button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #009879;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+.lista-trabajadores-page button:hover {
+  background-color: #007f63;
+}
+
+.lista-trabajadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.lista-trabajadores-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.lista-trabajadores-table th,
+.lista-trabajadores-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.lista-trabajadores-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.lista-trabajadores-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.lista-trabajadores-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.icono-cell {
+  text-align: center;
+}
+
+.icono-ver-mas {
+  cursor: pointer;
+  font-size: 20px;
+}
