@@ -13,7 +13,6 @@ const contratos = [
     finalDate: '2024-12-31',
     quantity: 50,
     serviceOrder: 'OS123',
-    activo: 'Activo',
     logo: 'path/to/logoA.png'
   },
   {
@@ -25,7 +24,6 @@ const contratos = [
     finalDate: '2024-11-30',
     quantity: 100,
     serviceOrder: 'OS124',
-    activo: 'Inactivo',
     logo: 'path/to/logoB.png'
   }, 
   {
@@ -37,7 +35,6 @@ const contratos = [
     finalDate: '2024-11-30',
     quantity: 125,
     serviceOrder: 'OS125',
-    activo: 'Inactivo',
     logo: 'path/to/logoB.png'
   }
   // Agregar más contratos según sea necesario...
@@ -52,7 +49,7 @@ function GestionContratos() {
 
   return (
     <div className="contratos-page">
-      <h2>Gestión de Contratos</h2>
+      <h1>Gestión de Contratos</h1>
       <div className="cards-container">
         {contratos.map(contrato => (
           <ContratoCard key={contrato.id} contrato={contrato} />

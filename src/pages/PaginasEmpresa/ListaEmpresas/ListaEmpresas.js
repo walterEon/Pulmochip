@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
 import './ListaEmpresas.css';
 
 function ListaEmpresas() {
@@ -41,55 +42,53 @@ function ListaEmpresas() {
   return (
     <div className="empresas-page">
       <header>
-        <h2>Lista de Empresas</h2>
-        <div className="action-buttons">
-          <button onClick={crearEmpresa}>Agregar Nueva Empresa</button>
-        </div>
+        <h1>Lista de Empresas</h1>
       </header>
       
       <div className="filtros">
         <input type="text" placeholder="Buscar..." value={busqueda} onChange={handleBusqueda} />
         <input type="text" placeholder="Nombre" value={filtroNombre} onChange={handleFiltroNombre} />
         <input type="text" placeholder="RUC" value={filtroRUC} onChange={handleFiltroRUC} />
-        <button onClick={filtrarEmpresas}>Filtrar</button>
-        <button onClick={limpiarFiltros}>Limpiar Filtros</button>
+        <button className="boton-filtro" onClick={filtrarEmpresas}>Filtrar</button>
+        <button className="boton-filtro" onClick={limpiarFiltros}>Limpiar Filtros</button>
       </div>
 
-      <table className="table">
+      <table className="empresas-table">
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>RUC</th>
-            <th>Nombre</th>
-            <th>Nombre Comercial</th>
-            <th>Dirección</th>
-            <th>Teléfono</th>
-            <th>Contacto</th>
-            <th>Celular</th>
-            <th>Email</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
+            <tr>
+              <th>ID</th>
+              <th>RUC</th>
+              <th>Nombre</th>
+              <th>Nombre Comercial</th>
+              <th>Dirección</th>
+              <th>Teléfono</th>
+              <th>Contacto</th>
+              <th>Celular</th>
+              <th>Email</th>
+              <th></th>
+            </tr>
+          </thead>
         <tbody>
           {filtrarEmpresas().map(empresa => (
-            <tr key={empresa.id}>
-              <td>{empresa.id}</td>
-              <td>{empresa.RUC}</td>
-              <td>{empresa.name}</td>
-              <td>{empresa.tradename}</td>
-              <td>{empresa.address}</td>
-              <td>{empresa.telephone}</td>
-              <td>{`${empresa.contactName} ${empresa.contactLastname} ${empresa.contactLastname2}`}</td>
-              <td>{empresa.cellphone}</td>
-              <td>{empresa.email}</td>
-              <td>
-                <button onClick={() => editarEmpresa(empresa.id)}>Editar</button>
-                <button>Eliminar</button>
-              </td>
-            </tr>
-          ))}
+              <tr key={empresa.id}>
+                <td>{empresa.id}</td>
+                <td>{empresa.RUC}</td>
+                <td>{empresa.name}</td>
+                <td>{empresa.tradename}</td>
+                <td>{empresa.address}</td>
+                <td>{empresa.telephone}</td>
+                <td>{`${empresa.contactName} ${empresa.contactLastname} ${empresa.contactLastname2}`}</td>
+                <td>{empresa.cellphone}</td>
+                <td>{empresa.email}</td>
+                <td className='icono-cell'><FaIcons.FaEdit  className='icono-editar' color="black" onClick={() => editarEmpresa(empresa.id)}/></td>
+              </tr>
+            ))}
         </tbody>
       </table>
+
+      <div className="button-container">
+          <button onClick={crearEmpresa}>Agregar Nueva Empresa</button>
+      </div>
     </div>
   );
 }

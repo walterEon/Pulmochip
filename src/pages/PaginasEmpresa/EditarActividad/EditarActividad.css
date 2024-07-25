@@ -5,11 +5,12 @@
     border-radius: 5px;
   }
   
-  .editar-actividad h2 {
+  .editar-actividad h1 {
     margin-bottom: 20px;
     font-size: 1.5em;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
+    text-align: center;
   }
   
   .form-section {
@@ -46,20 +47,21 @@
     resize: vertical;
   }
   
-  .editar-actividad button[type="submit"] {
+  .editar-actividad button {
+    margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #009879;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
     width: auto;
   }
   
-  .editar-actividad button[type="submit"]:hover {
-    background-color: #0056b3;
+  .editar-actividad button:hover {
+    background-color: #007f63;
   }
+
 
   .button-container{
     display: flex;

@@ -52,6 +52,10 @@ function EditarContrato() {
     navigate('/gestion-contratos'); // ir de vuelta a la gestión de contratos
   };
 
+  const handleCancel = () => {
+    navigate('/gestion-contratos');
+  };
+
   return (
     <div className="editar-contrato">
       <h2>Editar Contrato</h2>
@@ -104,6 +108,7 @@ function EditarContrato() {
 
         <div className="button-container">
           <button type="submit">Guardar Cambios</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
       </form>
     </div>

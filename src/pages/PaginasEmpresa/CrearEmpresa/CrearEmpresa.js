@@ -34,6 +34,10 @@ function CrearEmpresa() {
     navigate('/lista-empresas'); // Navegar de vuelta a la lista de empresas
   };
 
+  const handleCancel = () => {
+    navigate('/lista-empresas');
+  };
+
   return (
     <div className="crear-empresa">
       <h2>Crear Nueva Empresa</h2>
@@ -98,6 +102,7 @@ function CrearEmpresa() {
 
         <div className="button-container">
           <button type="submit">Crear Empresa</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
       </form>
     </div>

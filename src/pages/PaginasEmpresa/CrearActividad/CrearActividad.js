@@ -77,6 +77,10 @@ function CrearActividad() {
     navigate('/lista-actividades'); // Navegar de vuelta a la lista de actividades
   };
 
+  const handleCancel = () => {
+    navigate('/lista-actividades');
+  };
+
   return (
     <div className="crear-actividad">
       <h2>Crear Nueva Actividad</h2>
@@ -234,6 +238,7 @@ function CrearActividad() {
 
         <div className="button-container">
           <button type="submit">Crear Actividad</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
       </form>
     </div>

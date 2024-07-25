@@ -31,9 +31,13 @@ function CrearContrato() {
     navigate('/gestion-contratos'); // Navegar de vuelta a la gestión de contratos
   };
 
+  const handleCancel = () => {
+    navigate('/gestion-contratos');
+  };
+
   return (
     <div className="crear-contrato">
-      <h2>Crear Nuevo Contrato</h2>
+      <h1>Crear Nuevo Contrato</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-section">
           <h3>Información General</h3>
@@ -81,8 +85,9 @@ function CrearContrato() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="button-container">
           <button type="submit">Crear Contrato</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
       </form>
     </div>

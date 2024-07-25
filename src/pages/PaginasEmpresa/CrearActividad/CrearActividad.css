@@ -40,19 +40,19 @@
     resize: vertical;
   }
   
-  .crear-actividad button[type="submit"] {
+  .crear-actividad button {
+    margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #009879;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
     width: auto;
   }
   
-  .crear-actividad button[type="submit"]:hover {
-    background-color: #0056b3;
+  .crear-actividad button:hover {
+    background-color: #007f63;
   }
 
   .button-container{

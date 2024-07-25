@@ -29,6 +29,10 @@ function EditarEmpresa() {
     navigate('/lista-empresas'); // ir de vuelta a la lista de empresas
   };
 
+  const handleCancel = () => {
+    navigate('/lista-empresas');
+  };
+
   return (
     <div className="editar-empresa">
       <h2>Editar Empresa</h2>
@@ -93,6 +97,7 @@ function EditarEmpresa() {
 
         <div className="button-container">
           <button type="submit">Guardar cambios</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>
       </form>
     </div>

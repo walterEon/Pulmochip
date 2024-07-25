@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
+import * as CgIcons from 'react-icons/cg';
 import './ListaActividades.css';
 
 function ListaActividades() {
@@ -8,7 +10,6 @@ function ListaActividades() {
   const [filtroEmpresa, setFiltroEmpresa] = useState('');
   const [filtroFechaDesde, setFiltroFechaDesde] = useState('');
   const [filtroFechaHasta, setFiltroFechaHasta] = useState('');
-  const [filtroEstado, setFiltroEstado] = useState('');
   const [busqueda, setBusqueda] = useState('');
   const [actividades, setActividades] = useState([
     { id: 1, empresa: 'Empresa A', ordenServicio: 'OS123', fechaRegistro: '2024-07-01', horaInicio: '08:00', horaTermino: '17:00', estado: 'Activo' },
@@ -19,21 +20,18 @@ function ListaActividades() {
   const handleFiltroEmpresa = (e) => setFiltroEmpresa(e.target.value);
   const handleFiltroFechaDesde = (e) => setFiltroFechaDesde(e.target.value);
   const handleFiltroFechaHasta = (e) => setFiltroFechaHasta(e.target.value);
-  const handleFiltroEstado = (e) => setFiltroEstado(e.target.value);
   const handleBusqueda = (e) => setBusqueda(e.target.value);
 
   const limpiarFiltros = () => {
     setFiltroEmpresa('');
     setFiltroFechaDesde('');
     setFiltroFechaHasta('');
-    setFiltroEstado('');
     setBusqueda('');
   };
 
   const filtrarActividades = () => {
     return actividades.filter(actividad => 
       (filtroEmpresa === '' || actividad.empresa.includes(filtroEmpresa)) &&
-      (filtroEstado === '' || actividad.estado === filtroEstado) &&
       (filtroFechaDesde === '' || new Date(actividad.fechaRegistro) >= new Date(filtroFechaDesde)) &&
       (filtroFechaHasta === '' || new Date(actividad.fechaRegistro) <= new Date(filtroFechaHasta)) &&
       (busqueda === '' || actividad.id.toString().includes(busqueda) || actividad.empresa.includes(busqueda))
@@ -55,11 +53,7 @@ function ListaActividades() {
   return (
     <div className="actividades-page">
       <header>
-        <h2>Lista de actividades</h2>
-        <div className="action-buttons">
-          <button onClick={crearActividad}>Agregar Nueva Actividad</button>
-          {/* <button>Exportar a CSV</button> */}
-        </div>
+        <h1>Lista de actividades</h1>
       </header>
       
       <div className="filtros">
@@ -73,26 +67,20 @@ function ListaActividades() {
         <input type="date" value={filtroFechaDesde} onChange={handleFiltroFechaDesde} />
         <span>Hasta:</span>
         <input type="date" value={filtroFechaHasta} onChange={handleFiltroFechaHasta} />
-        <select value={filtroEstado} onChange={handleFiltroEstado}>
-          <option value="">Estado</option>
-          <option value="Activo">Activo</option>
-          <option value="Inactivo">Inactivo</option>
-        </select>
         <button onClick={filtrarActividades}>Filtrar</button>
         <button onClick={limpiarFiltros}>Limpiar Filtros</button>
       </div>
 
-      <table className="table">
+      <table className="actividades-table">
         <thead>
-          <tr>
-            <th>ID Actividad</th>
-            <th>Empresa</th>
-            <th>Orden de Servicio</th>
-            <th>Hora de Inicio</th>
-            <th>Hora de Término</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
+            <tr>
+              <th>ID Actividad</th>
+              <th>Empresa</th>
+              <th>Orden de Servicio</th>
+              <th>Hora de Inicio</th>
+              <th>Hora de Término</th>
+              <th></th>
+            </tr>
         </thead>
         <tbody>
           {filtrarActividades().map(actividad => (
@@ -102,18 +90,17 @@ function ListaActividades() {
               <td>{actividad.ordenServicio}</td>
               <td>{actividad.horaInicio}</td>
               <td>{actividad.horaTermino}</td>
-              <td>
-                <span className={`estado ${actividad.estado.toLowerCase()}`}>{actividad.estado}</span>
-              </td>
-              <td>
-              <button onClick={() => editarActividad(actividad.id)}>Editar</button>
-                <button>Eliminar</button>
-                <button onClick={() => verDetalles(actividad.id)}>Ver Detalles</button>
-              </td>
+              <td className='icono-cell'><FaIcons.FaEdit  className='icono-editar' color="black" onClick={() => editarActividad(actividad.id)}/><span></span> <CgIcons.CgMoreO  className='icono-ver-mas' color="black" onClick={() => verDetalles(actividad.id)}/></td>
             </tr>
           ))}
         </tbody>
       </table>
+      
+      <div className="button-container">
+          <button onClick={crearActividad}>Agregar Nueva Actividad</button>
+
+      </div>
+
     </div>
   );
 }

@@ -1,28 +1,93 @@
-
-
 .empresas-page {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 5px;
-    
-  }
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  height: 600px;
+  overflow: auto;
+}
+
+.empresas-page h1 {
+  text-align: center;
+}
+
+.empresas-page button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #009879;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+.empresas-page button:hover {
+  background-color: #007f63;
+}
+
+.empresas-page .boton-filtro {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #009879;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+.empresas-page .boton-filtro:hover {
+  background-color: #007f63;
+}
+
+
+.empresas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.empresas-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.empresas-table th,
+.empresas-table td {
+  padding: 12px 15px;
+}
+
+.empresas-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.empresas-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.empresas-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.icono-cell{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icono-editar{
+  cursor: pointer;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+}
   
-  .empresas-page  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .empresas-page  h2 {
-    text-align: center;
-    flex-grow: 1;
-  }
-  
-  .action-buttons button {
-    margin-left: 10px;
-  }
   
   .filtros {
     display: flex;
@@ -32,55 +97,14 @@
   }
   
   .filtros input,
-  .filtros select,
-  .filtros button {
+  .filtros select {
     margin: 5px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 15px;
   }
   
-  .filtros button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
   
-  .filtros button:hover {
-    background-color: #0056b3;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .table th,
-  .table td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid black;
-  }
-  
-  .table button {
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .tablebutton:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .estado.activo {
-    background-color: green;
-  }
-  
-  .estado.inactivo {
-    background-color: red;
-  }
+
   

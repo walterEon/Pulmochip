@@ -60,9 +60,13 @@ function EditarActividad() {
     navigate('/lista-actividades'); // Navegar de vuelta a la lista de actividades
   };
 
+  const handleCancel = () => {
+    navigate('/lista-actividades');
+  };
+
   return (
     <div className="editar-actividad">
-      <h2>Editar Actividad</h2>
+      <h1>Editar Actividad</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-section">
           <h3>Información General</h3>
@@ -222,6 +226,7 @@ function EditarActividad() {
         </div>
         <div className='button-container'>
           <button type="submit">Guardar Cambios</button>
+          <button type="button" onClick={handleCancel}>Cancelar</button>
         </div>          
       </form>
     </div>
