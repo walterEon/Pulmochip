@@ -346,10 +346,10 @@ function EditarContrato() {
       setActividades(actividades.map(act => (act.idActivity === actividad.idActivity ? actividad : act)));
     } else {
       // Crear nueva actividad
-
+      
       setActividad({
         ...actividad,
-        idActivity: 6
+        idActivity: actividades.length ? Math.max(actividades.map(a => a.idActivity)) + 1 : 1
       });
       setActividades([...actividades, actividad]);
     }
