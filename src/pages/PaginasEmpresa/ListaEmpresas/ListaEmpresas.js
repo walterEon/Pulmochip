@@ -31,13 +31,13 @@ function ListaEmpresas() {
     );
   };
 
-  const crearEmpresa = () => {
-    navigate(`/crear-empresa`);
-  };
+  // const crearEmpresa = () => {
+  //   navigate(`/crear-empresa`);
+  // };
 
-  const editarEmpresa = (id) => {
-    navigate(`/editar-empresa/${id}`);
-  };
+  // const editarEmpresa = (id) => {
+  //   navigate(`/editar-empresa/${id}`);
+  // };
 
   return (
     <div className="empresas-page">
@@ -65,7 +65,6 @@ function ListaEmpresas() {
               <th>Contacto</th>
               <th>Celular</th>
               <th>Email</th>
-              <th></th>
             </tr>
           </thead>
         <tbody>
@@ -80,15 +79,15 @@ function ListaEmpresas() {
                 <td>{`${empresa.contactName} ${empresa.contactLastname} ${empresa.contactLastname2}`}</td>
                 <td>{empresa.cellphone}</td>
                 <td>{empresa.email}</td>
-                <td className='icono-cell'><FaIcons.FaEdit  className='icono-editar' color="black" onClick={() => editarEmpresa(empresa.id)}/></td>
+                {/* <td className='icono-cell'><FaIcons.FaEdit  className='icono-editar' color="black" onClick={() => editarEmpresa(empresa.id)}/></td> */}
               </tr>
             ))}
         </tbody>
       </table>
 
-      <div className="button-container">
+      {/* <div className="button-container">
           <button onClick={crearEmpresa}>Agregar Nueva Empresa</button>
-      </div>
+      </div> */}
     </div>
   );
 }

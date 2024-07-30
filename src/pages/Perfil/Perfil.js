@@ -4,6 +4,11 @@ import { FaUser, FaIdCard, FaBriefcase, FaMapMarkerAlt, FaCalendarAlt, FaRulerVe
 import './Perfil.css';
 
 function Perfil() {
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   return (
     <div className="perfil-page">
       <div className='titulo'>
@@ -17,7 +22,7 @@ function Perfil() {
           <DataField icon={<FaIdCard />} label="DNI" value="21321321" />
           <DataField icon={<FaIdCard />} label="Celular" value="948927392" />
           <h3>Información de la cuenta</h3>
-          <DataField icon={<FaBriefcase />} label="Tipo de usuario" value="Administrador" />
+          <DataField icon={<FaBriefcase />} label="Tipo de usuario" value={capitalizeFirstLetter(localStorage.getItem('userType'))} />
           <DataField icon={<FaWeight />} label="Email" value="jquispe@gmail.com" />
           <DataField icon={<FaWeight />} label="Fecha de registro" value="01-01-2024" />
       </div>

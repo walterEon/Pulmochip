@@ -11,6 +11,9 @@
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
   }
+  .editar-contrato h1 {
+      text-align: center;
+  }
   
   .form-section {
     margin-bottom: 20px;
@@ -66,4 +69,53 @@
     display: flex;
     justify-content: center;
   }
+
+  .actividades-container {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .activities-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .activities-table th, .activities-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .activities-table th {
+    background-color: #f2f2f2;
+    
+  }
+  
+  .activities-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    background-color: #009879;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #007f63;
+  }
+  
   

@@ -25,19 +25,7 @@ const contratos = [
     quantity: 100,
     serviceOrder: 'OS124',
     logo: 'path/to/logoB.png'
-  }, 
-  {
-    id: 3,
-    draegerUser: 'Usuario3',
-    amount: 75000,
-    company: 'Empresa C',
-    initialDate: '2024-02-01',
-    finalDate: '2024-11-30',
-    quantity: 125,
-    serviceOrder: 'OS125',
-    logo: 'path/to/logoB.png'
   }
-  // Agregar más contratos según sea necesario...
 ];
 
 function GestionContratos() {
