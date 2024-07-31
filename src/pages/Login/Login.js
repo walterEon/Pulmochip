@@ -29,8 +29,8 @@ function Login({ setUserType }) {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token);
-        localStorage.setItem('userType', "empresa"); // Guarda el tipo de usuario en localStorage
-        setUserType("empresa");
+        localStorage.setItem('userType', "cliente"); // Guarda el tipo de usuario en localStorage
+        setUserType("cliente");
         navigate('/perfil');
       } else {
         setError('Usuario o contraseña incorrectos');

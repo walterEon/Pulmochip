@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './EditarContrato.css';
+import { type } from '@testing-library/user-event/dist/type';
 
 const contratos = [
   {
@@ -260,24 +261,25 @@ const respiradores = [
   { id: 41, brand: 'LIBUS', model: '9955', fpa: 50 }
 ];
 
+const idInicial = 1;
+
 
 function EditarContrato() {
 
   const [agregarEditar, setAgregarEditar] = useState('');
 
   const getRespiratorName = (id) => {
-    const respirator = respiradores.find(res => res.id === id);
-    console.log('respirador ')
+    const respirator = respiradores.find(res => res.id === parseInt(id));
     return respirator ? `${respirator.brand} / ${respirator.model}` : '';
   };
   
   const getFilterName = (id) => {
-    const filter = filtros.find(fil => fil.id === id);
+    const filter = filtros.find(fil => fil.id === parseInt(id));
     return filter ? `${filter.brand} / ${filter.filter}` : '';
   };
   
   const getCartridgeName = (id) => {
-    const cartridge = cartuchos.find(car => car.id === id);
+    const cartridge = cartuchos.find(car => car.id === parseInt(id));
     return cartridge ? `${cartridge.brand} / ${cartridge.cartridge}` : '';
   };
 
@@ -288,6 +290,7 @@ function EditarContrato() {
 
   const [contrato, setContrato] = useState(contratoExistente);
   const [actividades, setActividades] = useState(actividadesIniciales);
+  const [newId, setNewId] = useState(actividades.length);
   const [actividad, setActividad] = useState({
     idActivity: '',
     idCompany: contrato.company,
@@ -307,6 +310,31 @@ function EditarContrato() {
     humidity: '',
     pressure: ''
   });
+
+  useEffect(() => {
+    console.log(newId);
+
+    
+    setActividad({
+      idActivity: newId,
+      idCompany: contrato.company,
+      idContract: contrato.serviceOrder,
+      date: '',
+      startHour: '',
+      initialDisplacement: '',
+      startLunch: '',
+      finishLunch: '',
+      finalDisplacement: '',
+      finishHour: '',
+      respirator: '',
+      filter: '',
+      done: '',
+      cartridge: '',
+      temperature: '',
+      humidity: '',
+      pressure: ''
+    });
+  }, [newId])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -341,16 +369,19 @@ function EditarContrato() {
 
   const handleActividadSubmit = (e) => {
     e.preventDefault();
-    if (actividad.idActivity) {
+    if (agregarEditar == 'Editar Actividad') {
       // Editar actividad existente
       setActividades(actividades.map(act => (act.idActivity === actividad.idActivity ? actividad : act)));
     } else {
       // Crear nueva actividad
-      
+      if(actividades.length >= 1){
+        setNewId(actividades.length+1)
+      }
       setActividad({
         ...actividad,
-        idActivity: actividades.length ? Math.max(actividades.map(a => a.idActivity)) + 1 : 1
+        idActivity: newId
       });
+      console.log('nueva actividad' + actividad);
       setActividades([...actividades, actividad]);
     }
 
@@ -391,26 +422,16 @@ function EditarContrato() {
   };
 
   const handleAddActivity = () => {
-    setAgregarEditar('Agregar Nueva Actividad');
-    setActividad({
-      idActivity: '',
-      idCompany: contrato.company,
-      idContract: contrato.serviceOrder,
-      date: '',
-      startHour: '',
-      initialDisplacement: '',
-      startLunch: '',
-      finishLunch: '',
-      finalDisplacement: '',
-      finishHour: '',
-      respirator: '',
-      filter: '',
-      done: '',
-      cartridge: '',
-      temperature: '',
-      humidity: '',
-      pressure: ''
+
+    setNewId(currentId => {
+      return currentId + 1
     });
+
+    setAgregarEditar('Agregar Nueva Actividad');
+    
+    console.log('nuevo id: '+newId);
+    
+    
     setShowActivityForm(true);
   };
 
