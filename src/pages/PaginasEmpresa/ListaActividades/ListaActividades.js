@@ -40,8 +40,20 @@ function ListaActividades() {
   const [filtroContrato, setFiltroContrato] = useState('');
   const [busqueda, setBusqueda] = useState('');
   const [actividades, setActividades] = useState([
-    { id: 1, empresa: 'Empresa A', ordenServicio: 'OS123', fechaRegistro: '2024-07-01', horaInicio: '08:00', horaTermino: '17:00', estado: 'Activo' },
-    { id: 2, empresa: 'Empresa B', ordenServicio: 'OS124', fechaRegistro: '2024-07-02', horaInicio: '09:00', horaTermino: '18:00', estado: 'Inactivo' }
+    { id: 1, 
+      empresa: 'Empresa A', 
+      ordenServicio: 'OS123', 
+      fechaRegistro: '2024-07-01', 
+      horaInicio: '08:00', 
+      horaTermino: '17:00', 
+      estado: 'Activo' },
+    { id: 2, 
+      empresa: 'Empresa B', 
+      ordenServicio: 'OS124', 
+      fechaRegistro: '2024-07-02', 
+      horaInicio: '09:00', 
+      horaTermino: '18:00', 
+      estado: 'Inactivo' }
   ]);
   
 

@@ -9,3 +9,41 @@
   .actividades-realizadas-page h1 {
     text-align: center;
   }
+
+  .filtros {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .filtros input, .filtros select {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .filtros select{
+    height: 40px;
+  }
+
+  .filtros span{
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .actividades-realizadas-page button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #009879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .actividades-realizadas-page button:hover {
+    background-color: #007f63;
+  }
